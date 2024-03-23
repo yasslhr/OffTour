@@ -1,0 +1,48 @@
+
+<html lang="fr">
+<head>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <title>{% block title %}Mon Site{% endblock %}</title>
+</head>
+<body>
+<header>
+    <div class="header">
+    <nav>
+        <div class="mid-header">
+
+            {% if app.user %}
+                <p>Bonjour {{ app.user.email }}!</p>
+                <li id="button"><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+            {% else %}
+                <a href="{{ path('app_login') }}">Connexion</a>
+            {% endif %}
+
+            <li id="button"><a href="{{ path('home') }}">Accueil</a></li>
+
+
+
+            <li id="button"> <a href="{{ path('app_register') }}">Créer un compte</a></li>
+            <li id="button"> <a href="{{ path('app_lieu') }}" >Lieu </a></li>
+            <li id="button">  <a href="{{ path('app_avis') }}" >Avis </a></li>
+
+        </div>
+    </nav>
+    </div>
+
+</header>
+
+<main>
+    {% block body %}{% endblock %}
+</main>
+
+<footer>
+    <p>Tous droits réservés.</p>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Lieu{% endblock %}
+
+{% block body %}
+    <link rel="stylesheet" href="{{ asset('css/lieu.css') }}">
+
+
+
+
+    {% for l in lieu %}
+        <div class="catalogue">
+
+            <h1>{{ l.nom }}</h1>
+            <p><img class="img" src="/uploads/images/lieu{{ asset(l.image) }}" alt="{{ l.nom }}"></p>
+        </div>
+        <div class="texte">
+            <h2>{{ l.localisation }}</h2>
+            <h2>{{ l.Ville }}</h2>
+            <h2>Date de publication : {{ l.date|date('d/m/Y') }}</h2>
+            <h2>{{ l.description }}</h2>
+            <h2>A partir de : {{ l.prix }}€</h2>
+        </div>
+    {% endfor %}
+
+
+
+
+
+{% endblock %}

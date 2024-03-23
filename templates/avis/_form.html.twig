@@ -1,0 +1,17 @@
+{{ form_start(AvisForm) }}
+
+<link rel="stylesheet" href="{{ asset('css/ajouter.css') }}">
+
+<div class="mail">
+<h3> Nom : {{ form_widget(AvisForm.nom) }} </h3>
+<h3>Description : {{ form_widget(AvisForm.description) }} </h3>
+<h3>Note : {{ form_widget(AvisForm.note) }} </h3>
+
+
+</div>
+<div class="bout">
+    <button type="submit">Ajouter</button>
+
+    {{ form_end(AvisForm) }}
+
+</div>
